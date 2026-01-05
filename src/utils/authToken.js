@@ -1,6 +1,7 @@
 import { store } from "../store";
 import { setCredentials } from "../store/slices/authSlice";
-import { refreshAccessToken } from "../services/authService"; 
+import { refreshAccessToken } from "../services/authService";
+
 export const ensureAccessToken = async () => {
   const state = store.getState();
 
@@ -23,7 +24,6 @@ export const ensureAccessToken = async () => {
 
     return null;
   } catch (error) {
-   
     return null;
   }
 };

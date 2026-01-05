@@ -1,17 +1,16 @@
-import axios from '../api/axiosInstance';
+import axios from "../api/axiosInstance";
 
 export const refreshAccessToken = async () => {
   try {
-    const response = await axios.post('/refresh', null, {
-      withCredentials: true, // required if your refresh token is stored in cookies
+    const response = await axios.get("/refresh", {
+      withCredentials: true,
     });
 
-    // Assuming the response contains the new access token
     const { accessToken, user } = response.data;
 
     return { accessToken, user };
   } catch (error) {
-    console.error('Failed to refresh token:', error);
+    console.error("Failed to refresh token:", error);
     throw error;
   }
 };

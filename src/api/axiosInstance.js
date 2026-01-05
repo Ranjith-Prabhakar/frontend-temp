@@ -1,4 +1,3 @@
-// axiosInstance.ts
 import axios from "axios";
 import { setupResponseInterceptors } from "./responseInterceptor";
 import { setupRequestInterceptors } from "./requestInterceptor";

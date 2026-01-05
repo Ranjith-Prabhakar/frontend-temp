@@ -4,11 +4,11 @@ import AppLayout from "../layouts/AppLayout";
 import HomePage from "../pages/HomePage";
 import { Toaster } from "react-hot-toast";
 
-const AboutPage = lazy(() => import("../pages/AboutPage"));
-const NotFoundPage = lazy(() => import("../pages/NotFoundPage"));
-const DashboardPage = lazy(() => import("../pages/DashboardPage"));
 const ProtectedRoute = lazy(() => import("./ProtectedRoute"));
-const RouteNormalizer = lazy(() => import("./RouteNormalizer"));
+const NotFoundPage = lazy(() => import("../pages/NotFoundPage"));
+const Profile = lazy(() => import("../pages/Profile"));
+const Login = lazy(() => import("../pages/Login"));
+const Register = lazy(() => import("../pages/Register"));
 
 const AppRouter = () => {
   return (
@@ -17,11 +17,12 @@ const AppRouter = () => {
         <Routes>
           <Route element={<AppLayout />}>
             <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<AboutPage />} />
 
             {/* Protected Routes */}
             <Route element={<ProtectedRoute allowedRole="admin" />}>
-              <Route path="/dashboard" element={<DashboardPage />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/Profile" element={<Profile />} />
             </Route>
           </Route>
 

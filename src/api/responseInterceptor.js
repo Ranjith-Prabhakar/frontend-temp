@@ -1,4 +1,3 @@
-// src/api/responseInterceptor.js
 let isRefreshing = false;
 let failedQueue = [];
 
@@ -20,7 +19,6 @@ export const setupResponseInterceptors = (apiInstance) => {
     async (error) => {
       const originalRequest = error.config;
 
-      // 🔁 Handle 401 - token expired
       if (error.response?.status === 401 && !originalRequest._retry) {
         originalRequest._retry = true;
 
@@ -48,13 +46,13 @@ export const setupResponseInterceptors = (apiInstance) => {
           return apiInstance(originalRequest);
         } catch (refreshError) {
           processQueue(refreshError, null);
-          return Promise.reject(refreshError); // 👈 let customErrorHandler handle it
+          return Promise.reject(refreshError);
         } finally {
           isRefreshing = false;
         }
       }
 
-      return Promise.reject(error); // 👈 Pass it along to `customErrorHandler`
+      return Promise.reject(error);
     }
   );
 };
