@@ -4,10 +4,12 @@ import Footer from "./Footer";
 
 export default function AppLayout() {
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Header />
-      <Outlet />
+      <main className="flex-1 overflow-y-auto">
+        <Outlet />
+      </main>
       <Footer />
-    </>
+    </div>
   );
 }

@@ -1,15 +1,17 @@
 import NavItem from "./components/NavItem";
-import ProfileMenu from "./components/ProfileMenu";
 import { navbarItems } from "../../constants/navbarItems";
+import ProfileIcon from "./components/ProfileIcon";
 
 const Navbar = () => {
   return (
-    <nav>
-      {navbarItems.map((navItem) => (
-        <NavItem config={navItem} />
-      ))}
-      <ProfileMenu />
-    </nav>
+    <div className="flex items-center gap-4">
+      <ul className="menu menu-horizontal gap-2">
+        {navbarItems.map((item, index) => (
+          <NavItem key={index} item={item} />
+        ))}
+      </ul>
+      <ProfileIcon />
+    </div>
   );
 };
 

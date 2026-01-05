@@ -1,23 +1,23 @@
-export let navbarItems = [
+export const navbarItems = [
   {
     name: "Home",
     dropDown: [
-      { name: "test", dropDown: [{}] },
-      { name: "test2", dropDown: [{}] },
+      { name: "test1", dropDown: [] },
+      { name: "test2", dropDown: [] },
     ],
   },
   {
-    name: "Home",
+    name: "About",
     dropDown: [
-      { name: "test", dropDown: [{}] },
-      { name: "test2", dropDown: [{}] },
+      { name: "test3", dropDown: [] },
+      { name: "test4", dropDown: [] },
     ],
   },
   {
-    name: "Home",
+    name: "Contact us",
     dropDown: [
-      { name: "test", dropDown: [{}] },
-      { name: "test2", dropDown: [{}] },
+      { name: "test5", dropDown: [] },
+      { name: "test6", dropDown: [] },
     ],
   },
 ];

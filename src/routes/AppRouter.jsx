@@ -17,11 +17,11 @@ const AppRouter = () => {
         <Routes>
           <Route element={<AppLayout />}>
             <Route path="/" element={<HomePage />} />
-
-            {/* Protected Routes */}
-            <Route element={<ProtectedRoute allowedRole="admin" />}>
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+            {/* Protected Routes */}
+            <Route element={<ProtectedRoute allowedRole="admin" />}>
+             
               <Route path="/Profile" element={<Profile />} />
             </Route>
           </Route>

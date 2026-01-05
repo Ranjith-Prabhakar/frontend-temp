@@ -1,5 +1,9 @@
+import Hero from "../../features/Hero";
+
 const HomePage = () => {
-  return <div>Welcome to the Home Page</div>;
+  return <div>
+    <Hero />
+  </div>;
 };
 
 export default HomePage;
