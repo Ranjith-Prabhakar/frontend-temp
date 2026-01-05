@@ -1,6 +1,7 @@
-import React from "react";
 
-const ProfileIcon = () => {
+
+const LoggedInProfileIcon = () => {
+  
   return (
       <div className="dropdown dropdown-end">
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
@@ -22,8 +23,8 @@ const ProfileIcon = () => {
         <li><a>Settings</a></li>
         <li><a>Logout</a></li>
       </ul>
-    </div>
+    </div> 
   );
 };
 
-export default ProfileIcon;
+export default LoggedInProfileIcon;

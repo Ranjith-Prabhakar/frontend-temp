@@ -1,8 +1,11 @@
 import NavItem from "./components/NavItem";
 import { navbarItems } from "../../constants/navbarItems";
-import ProfileIcon from "./components/ProfileIcon";
-
+import useGetUser from "../../hooks/useGetUser";
+import LoggedInProfileIcon from "./components/LoggedInProfileIcon";
+import LoggedOutProfileIcon from "./components/LoggedOutProfileIcon";
 const Navbar = () => {
+  const user = useGetUser()
+  console.log("user",user)
   return (
     <div className="flex items-center gap-4">
       <ul className="menu menu-horizontal gap-2">
@@ -10,7 +13,12 @@ const Navbar = () => {
           <NavItem key={index} item={item} />
         ))}
       </ul>
-      <ProfileIcon />
+
+      <>
+      {
+        user ? <LoggedInProfileIcon /> : <LoggedOutProfileIcon />
+      }
+      </>
     </div>
   );
 };

@@ -2,14 +2,13 @@ import { Link } from "react-router-dom";
 
 export default function Login() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-900">
+    <div className="min-h-screen flex items-center justify-center">
       <div className="w-full max-w-md bg-gray-800 rounded-lg shadow-lg p-8">
         <h2 className="text-2xl font-bold text-white text-center mb-6">
           Welcome Back
         </h2>
 
         <form className="space-y-4">
-          {/* Email */}
           <div>
             <label className="block text-sm text-gray-300 mb-1">Email</label>
             <input
