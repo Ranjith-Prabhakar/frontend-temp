@@ -1,6 +1,6 @@
-import NavItem from "../../components/layout/NavItem";
-import ProfileMenu from "../ProfileMenu";
-import navbarItems from "../../constants/navbarItems";
+import NavItem from "./components/NavItem";
+import ProfileMenu from "./components/ProfileMenu";
+import { navbarItems } from "../../constants/navbarItems";
 
 const Navbar = () => {
   return (

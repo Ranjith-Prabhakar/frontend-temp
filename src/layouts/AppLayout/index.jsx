@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 
-export function AppLayout() {
+export default function AppLayout() {
   return (
     <>
       <Header />

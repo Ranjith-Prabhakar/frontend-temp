@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import AppLayout from "../layouts/AppLayout";
-import HomePage from "../pages/HomePage";
+import HomePage from "../pages/Home";
 import { Toaster } from "react-hot-toast";
 
 const ProtectedRoute = lazy(() => import("./ProtectedRoute"));
-const NotFoundPage = lazy(() => import("../pages/NotFoundPage"));
+const NotFoundPage = lazy(() => import("../pages/NotFound"));
 const Profile = lazy(() => import("../pages/Profile"));
 const Login = lazy(() => import("../pages/Login"));
 const Register = lazy(() => import("../pages/Register"));
