@@ -1,50 +1,77 @@
-import { Link } from "react-router-dom";
+import FormInput from "../../components/ui/FormInput";
+import SubmitButton from "../../components/ui/SubmitButton";
+import { useRegisterForm } from "./hook";
+import { FaHome } from "react-icons/fa";
 
-export default function Login() {
+const Index = () => {
+  const {
+    email,
+    emailError,
+    emailErrorMsg,
+    emailHandler,
+    emailErrorHandler,
+    password,
+    passwordError,
+    passwordErrorMsg,
+    passwordHandler,
+    passwordErrorHandler,
+    submitLoginFormHandler,
+    navigate,
+    loading,
+  } = useRegisterForm();
+
   return (
-    <div className="min-h-screen flex items-center justify-center">
+    <div className="min-h-screen flex items-center justify-center bg-gray-900">
       <div className="w-full max-w-md bg-gray-800 rounded-lg shadow-lg p-8">
-        <h2 className="text-2xl font-bold text-white text-center mb-6">
-          Welcome Back
-        </h2>
+        <div className="flex justify-center items-center">
+          <h2 className="text-2xl font-bold text-center">Login</h2>
+        </div>
 
-        <form className="space-y-4">
-          <div>
-            <label className="block text-sm text-gray-300 mb-1">Email</label>
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="w-full px-4 py-2 rounded bg-gray-700 text-white outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
+        {/* Email */}
+        <FormInput
+          name="Email"
+          type="email"
+          placeholder="you@example.com"
+          state={email}
+          handler={emailHandler}
+          errorHandler={emailErrorHandler}
+          isError={emailError}
+          errorMessage={emailErrorMsg}
+        />
 
-          {/* Password */}
-          <div>
-            <label className="block text-sm text-gray-300 mb-1">Password</label>
-            <input
-              type="password"
-              placeholder="Enter your password"
-              className="w-full px-4 py-2 rounded bg-gray-700 text-white outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
+        {/* Password */}
+        <FormInput
+          name="Password"
+          type="password"
+          placeholder="Enter password"
+          state={password}
+          handler={passwordHandler}
+          errorHandler={passwordErrorHandler}
+          isError={passwordError}
+          errorMessage={passwordErrorMsg}
+        />
 
-          {/* Login Button */}
-          <button
-            type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded transition"
+        {/* Submit button */}
+        <SubmitButton
+          name="Login"
+          loading={loading}
+          disable={emailError || passwordError || !email || !password}
+          submitHandler={submitLoginFormHandler}
+        />
+
+        {/* Not registered yet link */}
+        <h5 className="text-center mt-4 text-sm">
+          Not registered yet?{" "}
+          <span
+            onClick={() => navigate("/register")}
+            className="link link-primary cursor-pointer"
           >
-            Login
-          </button>
-        </form>
-
-        {/* Register Navigator */}
-        <p className="text-gray-400 text-sm text-center mt-6">
-          Don’t have an account?{" "}
-          <Link to="/register" className="text-blue-400 hover:underline">
-            Register
-          </Link>
-        </p>
+            Create an account
+          </span>
+        </h5>
       </div>
     </div>
   );
-}
+};
+
+export default Index;
